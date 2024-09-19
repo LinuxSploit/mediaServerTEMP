@@ -3,6 +3,7 @@ FROM golang:1.22.5-alpine
 
 # Install dependencies for Go, FFmpeg, and build tools
 RUN apk add --no-cache bc ffmpeg bash gcc g++ libc-dev curl
+RUN apt-get update && apt-get install -y curl
 
 # Set the working directory inside the container
 WORKDIR /app
